@@ -6,10 +6,12 @@ import NavigationHeader from './NavigationHeader.vue';
 </script>
 
 <template>
-    <!-- Hot link header -->
-    <HotLinksHeader />
-    <!-- App Header -->
-    <AppHeader />
-    <!-- Navigation Bar -->
-    <NavigationHeader />
+    <div class="">
+        <!-- Hot link header -->
+        <HotLinksHeader />
+        <!-- App Header -->
+        <AppHeader />
+        <!-- Navigation Bar -->
+        <NavigationHeader />
+    </div>
 </template>
