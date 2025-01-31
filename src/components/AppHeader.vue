@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchComponent from './form-inputs/SearchComponent.vue';
+    import SearchComponent from './form-inputs/SearchComponent.vue';
 
 </script>
 

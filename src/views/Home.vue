@@ -6,7 +6,6 @@
 
 <template>
     <div class="home">
-        <Header/>
         <HeroSection />
         <BannerSection />
     </div>
