@@ -1,19 +1,11 @@
 <script setup>
     import ProductCard1 from '@/components/ProductCard1.vue';
-import { getProductsData } from '@/services/productsService';
-    import axios from 'axios';
+    import { getProductsData } from '@/services/productsService';
     import { onMounted, ref } from 'vue';
 
     const products = ref(null);
 
     onMounted(() => {
-        // console.log("component mounted");
-        // axios.get('https://fakestoreapi.com/products').then((resposne) => {
-        //     console.log("printing repsonse", resposne);
-        //     products.value = resposne.data;
-        // }).catch((err) => {
-        //     console.log("error", err)
-        // })
         getProductsData().then( response => {
             products.value = response.data;
         }).catch( err => {
@@ -24,7 +16,7 @@ import { getProductsData } from '@/services/productsService';
 </script>
 
 <template>
-    <div class="container mx-auto">
+    <div class="container mx-auto my-12">
         <div class="flex flex-wrap justify-around">
             <ProductCard1 v-for="(product, index) in products" :key="index" :data="product" />
         </div>
