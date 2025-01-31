@@ -12,7 +12,7 @@
 <template>
     <div class="">
         <li 
-            class="relative" 
+            class="relative z-9" 
             v-if="data.subMenu" 
             @mouseenter="isSubMenuVisible = !isSubMenuVisible" 
             @mouseleave="isSubMenuVisible = !isSubMenuVisible"
