@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const apiClient = axios.create({
-    baseURL: 'https://fakestoreapi.com/',
+    baseURL: process.env.API_BASE_URL,
     headers: {
         'Content-Type': 'application/json'
     }
