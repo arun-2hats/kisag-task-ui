@@ -1,5 +1,5 @@
 import { apiClient } from "./axiosInstance"
 
 export const getProductsData = () => {
-    return apiClient.get('products');
+    return apiClient.get('https://fakestoreapi.com/products');
 }
