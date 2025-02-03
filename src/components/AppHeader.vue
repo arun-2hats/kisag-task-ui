@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script setup>
+    import Cart from './Cart.vue';
     import SearchComponent from './form-inputs/SearchComponent.vue';
-
 </script>
 
 <template>
@@ -20,7 +20,7 @@
                 <ul class="flex items-center ml-[1rem] space-x-4 ">
                     <button><img width="20" height="20" src="../assets/user-icon.svg" alt="whish list icon"></button>
                     <button><img width="20" height="20" src="../assets/like-product.svg" alt="whish list icon"></button>
-                    <button><img width="20" height="20" src="../assets/cart-icon.svg" alt="whish list icon"></button>
+                    <Cart />
                 </ul>
             </div>
         </div>

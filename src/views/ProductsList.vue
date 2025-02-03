@@ -2,13 +2,15 @@
     import ProductCard1 from '@/components/ProductCard1.vue';
     import { useProductStore } from '@/store.js/products';
     import { storeToRefs } from 'pinia';
-    import { onMounted } from 'vue';
+    import { onMounted, watch } from 'vue';
 
     const productStore = useProductStore();
-    const { categoryList, filteredList, category } = storeToRefs(productStore);
-    
-    onMounted(() => {
-        productStore.fetchProductsData();
+    const { categoryList, productList, filteredList, category } = storeToRefs(productStore);
+
+    watch(() => {
+        if(productList.value.length === 0){
+            productStore.fetchProductsData();
+        }   
     })
 
     const onSearchHandler = () => {
@@ -37,7 +39,7 @@
         </div>
 
         <div class="flex flex-wrap">
-            <ProductCard1 rd1 v-for="(product, index) in filteredList" :key="index" :data="product" />
+            <ProductCard1 v-for="(product, index) in filteredList" :key="index" :data="product" />
         </div>
     </div>
 </template>
