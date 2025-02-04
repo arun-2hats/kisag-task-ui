@@ -50,13 +50,13 @@
 
 <template>
     <div class="container mx-auto">
-        <div class="py-24 ">
+        <div class="py-12 md:py-24 px-4 md:px-0">
             <div class="head flex justify-between mb-14">
-                <h3 class="text-4xl font-extrabold">Bestseller</h3>
+                <h3 class="text-[1.5rem] md:text-4xl font-bold">Bestseller</h3>
 
-                <div class="flex space-x-4 items-center">
+                <div class="hidden md:flex space-x-4 items-center">
                     <!-- <a class="font-black" href="#">See all</a> -->
-                     <router-link :to="{name: 'product-list'}" class="font-black">See all</router-link>
+                    <router-link :to="{name: 'product-list'}" class="font-bold">See all</router-link>
                     <div class="navs flex space-x-4">
                         <div id="prev" class="w-11 h-11 bg-[#8d8d8d] rounded-full"></div>
                         <div id="next" class="w-11 h-11 bg-[#8d8d8d] rounded-full"></div>

@@ -19,12 +19,12 @@
             
             <!-- product card title and data -->
             <div class="w-full">
-                <h5 class="text-base font-black leading-[1.5]">{{data.name}}</h5>
+                <h5 class="text-base font-bold leading-[1.5]">{{data.name}}</h5>
                 <p class="text-xs text-gray-500 mb-1">{{data['art-no']}}</p>
                 <p class="text-xs truncate mb-3">{{data.desc}}</p>
                 <div class="flex justify-between items-center ">
-                    <p class="font-extrabold ">{{data.price}}</p>
-                    <button class="px-6 py-2 font-extrabold bg-[#f05252] text-white rounded-full ">Add to cart  </button>
+                    <p class="font-bold ">{{data.price}}</p>
+                    <button class="px-6 py-2 font-bold bg-[#f05252] hover:bg-black hover:text-white text-white rounded-full ">Add to cart  </button>
                 </div>
             </div>
         </div>   

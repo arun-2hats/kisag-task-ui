@@ -14,7 +14,7 @@
             <img width="20" height="20" src="../assets/cart-icon.svg" alt="whish list icon">
         </button> 
         <!-- Badge for Icon -->
-        <div v-if="!cartModalVisiblity" class="absolute -top-2 left-3 text-xs px-2 leading-[1.5] bg-red-500 text-white rounded-full">{{cart}}</div>
+        <div v-if="!cartModalVisiblity && cart > 0" class="absolute -top-2 left-3 text-xs px-1 md:px-2 leading-[1.5] bg-red-500 text-white rounded-full">{{cart}}</div>
         
         <!-- Modal - Cart view -->
         <div v-if="cartModalVisiblity" class="w-78 absolute top-6 right-0 bg-white border-1 border-gray-100 shadow-md z-10 rounded-md">
@@ -24,7 +24,7 @@
             </div>
 
             <div class="flex flex-col px-3 w-full h-68 overflow-y-scroll">
-                <div v-for="(product, index) in cartItems" :key="index" class="w-full flex items-center border-b-1 border-gray-100 py-1">
+                <div v-for="(product, index) in cartItems" :key="index" class="w-full flex items-center border-b-1 border-gray-200 py-1">
                     <img class="p-4" width="65" height="65" :src="product.image" alt="product image">
                     <div class="flex-1 w-[35%]">
                         <h6 class="leading-[1.5] text-sm truncate">{{product.title}}</h6>

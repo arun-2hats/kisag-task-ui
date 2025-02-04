@@ -99,7 +99,7 @@ import NavLinkItem from './NavLinkItem.vue';
 
 <template>
     <div class="hidden md:block mx-auto container border-b-1 border-gray-100">
-        <ul class="flex items-center space-x-11 justify-center p-4">
+        <ul class="flex items-center justify-center">
             <NavLinkItem v-for="(menuItem, index) in menuItems" :key="index" :data="menuItem"/>
         </ul>
     </div>
