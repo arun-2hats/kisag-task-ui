@@ -6,7 +6,8 @@ export const useProductStore = defineStore('products', {
         productList: [],
         categoryList: [],
         filteredList: [],
-        category: 'all'
+        category: 'all',
+        currentProductData: []
     }),
     actions: {
         fetchProductsData() {
@@ -23,6 +24,15 @@ export const useProductStore = defineStore('products', {
                 this.filteredList = this.productList; 
             } else {
                 this.filteredList = this.productList.filter((obj) => obj.category === this.category);
+            }
+        },
+        async fetchSingleProductData(payload){
+            this.currentProductData = [];
+            try{
+                const response = await getProductsData(payload);
+                this.currentProductData = await response.data;
+            }catch(err){
+                console.log("error", err)
             }
         }
     }

@@ -6,7 +6,7 @@ export const useCartStore = defineStore('cart', () => {
     // computed()s become getters
     // function()s become actions
     const cart = ref(0);
-    const cartItems = reactive([])
+    const cartItems = reactive([]);
     const addToCart = (data) => {
         const isProductExist = cartItems.find((obj) => obj.id === data.id);
         if(isProductExist){

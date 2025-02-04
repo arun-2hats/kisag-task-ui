@@ -28,10 +28,10 @@
                     <img class="p-4" width="65" height="65" :src="product.image" alt="product image">
                     <div class="flex-1 w-[35%]">
                         <h6 class="leading-[1.5] text-sm truncate">{{product.title}}</h6>
-                        <p class="leading-[1.5] font-black ">${{product.price}}</p>
+                        <p class="leading-[1.5] font-bold ">${{product.price}}</p>
                     </div>
-                    <p class="font-black inline-flex items-center gap-1">
-                        <span class="text-sm font-black mb-1 ">x</span> {{ product.count }}
+                    <p class="font-bold inline-flex items-center gap-1">
+                        <span class="text-sm font-bold mb-1 ">x</span> {{ product.count }}
                     </p>  
                 </div>
                   

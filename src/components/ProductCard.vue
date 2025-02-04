@@ -8,8 +8,8 @@
 </script>
 
 <template>
-    <RouterLink :to="{name: 'product-view', params: {id: data.id}}">
-        <div class="relative px-5 w-75 flex flex-col items-center border-r-1 border-gray-300 cursor-pointer">
+    <RouterLink class="w-full" :to="{name: 'product-view', params: {id: data.id}}">
+        <div class="relative px-5 w-full md:w-75 flex flex-col items-center border-0 md:border-r-1 border-gray-300 cursor-pointer">
             <div class="absolute top-0 right-0 p-4">
                 <img src="../assets/like-product.svg" alt="">   
             </div>

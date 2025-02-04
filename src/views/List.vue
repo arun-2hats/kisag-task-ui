@@ -28,7 +28,7 @@
                     <select 
                         value="all" 
                         @change="onSearchHandler" 
-                        class="border-none outline-none flex flex-row bg-gray-100 rounded-full px-[.9rem]  py-[.8rem] space-x-2 w-[24rem]" 
+                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-none outline-none flex-row bg-gray-100 px-[.9rem]  py-[.8rem] space-x-2 w-[24rem] " 
                         v-model="category" 
                         type="text" 
                         aria-label="search item"  
@@ -38,12 +38,6 @@
                     </select>
                 </form>
             </div>
-
-            <!-- <div class="flex justify-center mx-auto">
-                <div class="flex flex-wrap">
-                    <ProductCard1 class="basis-full md:basis-0" v-for="(product, index) in filteredList" :key="index" :data="product" />
-                </div>
-            </div> -->
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
                 <ProductCard1 class="" v-for="(product, index) in filteredList" :key="index" :data="product" />

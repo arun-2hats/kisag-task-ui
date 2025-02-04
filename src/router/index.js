@@ -16,17 +16,15 @@ const router = createRouter({
             component: () => import('../views/About.vue') //lalzy loading technique
         },
         {
-            path: '/product-view/:id',
-            name: 'product-view',
-            component: () => import('../views/ProductView.vue'), //lalzy loading technique
-            props: true
+            path: '/products',
+            name: 'product-list',
+            component: () => import('../views/List.vue'), //lalzy loading technique
         },
         {
-            path: '/product-list',
-            name: 'product-list',
-            component: () => import('../views/ProductsList.vue'), //lalzy loading technique
-            props: true
-        }
+            path: '/products:id',
+            name: 'product-view',
+            component: () => import('../views/product/View.vue'), //lalzy loading technique
+        },
     ]
 })
 
