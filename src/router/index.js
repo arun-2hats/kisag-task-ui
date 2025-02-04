@@ -13,18 +13,18 @@ const router = createRouter({
         {
             path: '/about',
             name: 'about',
-            component: import('../views/About.vue') //lalzy loading technique
+            component: () => import('../views/About.vue') //lalzy loading technique
         },
         {
             path: '/product-view/:id',
             name: 'product-view',
-            component: import('../views/ProductView.vue'), //lalzy loading technique
+            component: () => import('../views/ProductView.vue'), //lalzy loading technique
             props: true
         },
         {
             path: '/product-list',
             name: 'product-list',
-            component: import('../views/ProductsList.vue'), //lalzy loading technique
+            component: () => import('../views/ProductsList.vue'), //lalzy loading technique
             props: true
         }
     ]
