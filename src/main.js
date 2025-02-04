@@ -8,11 +8,11 @@ import { createPinia } from 'pinia';
 const pinia = createPinia();
 const app = createApp(App);
 
+// using router in our app
+app.use(router);
 // using pinia in our app
 app.use(pinia);
 
-// using router in our app
-app.use(router);
 
 app.mount('#app');
 // using route

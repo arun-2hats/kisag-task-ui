@@ -56,7 +56,7 @@
 
                 <div class="flex space-x-4 items-center">
                     <!-- <a class="font-black" href="#">See all</a> -->
-                     <RouterLink :to="'product-list'" class="font-black">See all</RouterLink>
+                     <router-link :to="{name: 'product-list'}" class="font-black">See all</router-link>
                     <div class="navs flex space-x-4">
                         <div id="prev" class="w-11 h-11 bg-[#8d8d8d] rounded-full"></div>
                         <div id="next" class="w-11 h-11 bg-[#8d8d8d] rounded-full"></div>
