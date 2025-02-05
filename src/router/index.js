@@ -21,9 +21,14 @@ const router = createRouter({
             component: () => import('../views/List.vue'), //lalzy loading technique
         },
         {
-            path: '/products:id',
+            path: '/products/id=:id',
             name: 'product-view',
             component: () => import('../views/product/View.vue'), //lalzy loading technique
+        },
+        {
+            path: '/products/category=:category',
+            name: 'products',
+            component: () => import('../views/Products.vue'), //lalzy loading technique
         },
     ]
 })

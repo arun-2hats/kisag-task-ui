@@ -2,19 +2,25 @@
     import ProductCard1 from '@/components/ProductCard1.vue';
     import { useProductStore } from '@/store.js/products';
     import { storeToRefs } from 'pinia';
-    import { onMounted, watch } from 'vue';
+    import { onMounted } from 'vue';
+    import { useRoute } from 'vue-router';
+
+    const route = useRoute();
 
     const productStore = useProductStore();
     const { categoryList, productList, filteredList, category } = storeToRefs(productStore);
+    // const category = ref('');
 
-    watch(() => {
-        if(productList.value.length === 0){
-            productStore.fetchProductsData();
-        }   
+    onMounted(() => {
+        // if(productList.value.length === 0){
+             productStore.fetchProductsData();
+        // }   
     })
+
 
     const onSearchHandler = () => {
         productStore.getFilteredData();
+        // productStore.fetchCategoryWiseProducts({category: category.value})
     };
 </script>
 
@@ -28,7 +34,7 @@
                     <select 
                         value="all" 
                         @change="onSearchHandler" 
-                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-none outline-none flex-row bg-gray-100 px-[.9rem]  py-[.8rem] space-x-2 w-[24rem] " 
+                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5  border-none outline-none flex-row bg-gray-100 px-[.9rem]  py-[.8rem] space-x-2 w-[24rem] " 
                         v-model="category" 
                         type="text" 
                         aria-label="search item"  

@@ -2,7 +2,7 @@
     import { ref } from 'vue';
 
     defineProps({
-        data: Object,
+        category: String,
         key: Number
     })
 
@@ -11,7 +11,7 @@
 
 <template>
     <div class="">
-        <li 
+        <!-- <li 
             class="relative z-9 mx-5 py-4" 
             v-if="data.subMenu" 
             @mouseenter="isSubMenuVisible = !isSubMenuVisible" 
@@ -37,7 +37,15 @@
                     </ul>
                 </div>
             </div>
+        </li> -->
+        <li class="mx-5 py-4">
+            <RouterLink 
+                active-class="text-red-500" :to="{name: 'products', params: { category }}" 
+                class="text-sm md:text-base font-bold hover:text-red-400" 
+                href="#"
+            >
+                {{category}}
+            </RouterLink>
         </li>
-        <li v-else="data.subMenu"><a class="text-sm md:text-base font-bold hover:text-orange-600 mx-5 py-4" href="#">{{data.displayName}}</a></li>
     </div>
 </template>

@@ -6,7 +6,9 @@
 <template>
     <div class="border-b-1 border-gray-100 px-4">
         <div class="mx-auto container flex flex-row items-center justify-between py-[1.25rem] ">
-            <img width="102" height="32" src="../assets/logo.svg" alt="kisag logo">
+            <RouterLink :to="{name: 'home'}"> 
+                <img width="102" height="32" src="../assets/logo.svg" alt="kisag logo">
+            </RouterLink>
 
             <SearchComponent />
 
