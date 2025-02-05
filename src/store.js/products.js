@@ -15,7 +15,6 @@ export const useProductStore = defineStore('products', {
                 const response = await getProductsData();
                 this.productList = response.data;
                 this.filteredList = response.data;
-                // this.categoryList = [...new Set(response.data.map((obj) => obj.category))]
             }catch(err){
                 console.log(err)
             }

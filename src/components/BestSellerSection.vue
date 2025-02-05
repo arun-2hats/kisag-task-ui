@@ -1,5 +1,15 @@
 <script setup lang="ts">
-    import ProductCard from './ProductCard.vue';
+    import { useProductStore } from '@/store.js/products';
+import ProductCard1 from './ProductCard.vue';
+import { storeToRefs } from 'pinia';
+import { onMounted } from 'vue';
+
+    const productStore = useProductStore();
+    const { categoryList, filteredList, category, productList } = storeToRefs(productStore);
+
+    onMounted(() => {
+        productStore.fetchProductsData();
+    })
 
     const bestSellerData = [
         {
@@ -46,6 +56,7 @@
         },
         
     ]
+
 </script>
 
 <template>
@@ -64,7 +75,7 @@
                 </div>
             </div>
             <div class="flex overflow-x-scroll">
-                <ProductCard v-for="(bestSeller, index) in bestSellerData" :key="index" :data="bestSeller" />
+                <ProductCard1 :border="'right'" v-for="(product, index) in productList.slice(0, 7)" :key="index" :data="product" />
             </div>
         </div>
     </div>

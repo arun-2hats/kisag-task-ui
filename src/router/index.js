@@ -13,22 +13,22 @@ const router = createRouter({
         {
             path: '/about',
             name: 'about',
-            component: () => import('../views/About.vue') //lalzy loading technique
+            component: () => import('../views/About.vue'),
         },
         {
             path: '/products',
             name: 'product-list',
-            component: () => import('../views/List.vue'), //lalzy loading technique
+            component: () => import('../views/List.vue'),
         },
         {
             path: '/products/id=:id',
             name: 'product-view',
-            component: () => import('../views/product/View.vue'), //lalzy loading technique
+            component: () => import('../views/product/View.vue'),
         },
         {
             path: '/products/category=:category',
             name: 'products',
-            component: () => import('../views/Products.vue'), //lalzy loading technique
+            component: () => import('../views/Products.vue'),
         },
     ]
 })

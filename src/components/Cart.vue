@@ -2,6 +2,7 @@
     import { useCartStore } from '@/store.js/cart';
     import { storeToRefs } from 'pinia';
     import { ref } from 'vue';
+    
     const cartStore = useCartStore();
 
     const cartModalVisiblity = ref(false);

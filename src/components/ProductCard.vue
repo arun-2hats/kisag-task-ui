@@ -1,32 +1,42 @@
 <script setup>
+    import { useCartStore } from '@/store.js/cart';
+
     defineProps({
         data: {
             type: Object,
             required: true
+        },
+        border: {
+            type: String
         }
     })
+
+    const cartStore = useCartStore();
 </script>
 
 <template>
-    <RouterLink class="w-full" :to="{name: 'product-view', params: {id: data.id}}">
-        <div class="relative px-5 w-full md:w-75 flex flex-col items-center border-0 md:border-r-1 border-gray-300 cursor-pointer">
-            <div class="absolute top-0 right-0 p-4">
-                <img src="../assets/like-product.svg" alt="">   
-            </div>
-            <div class="p-7">
-                <img class="w-[203px] h-[203px] " src="../assets/product-01.png" alt="product image">
-            </div>
-            
-            <!-- product card title and data -->
-            <div class="w-full">
-                <h5 class="text-base font-bold leading-[1.5]">{{data.name}}</h5>
-                <p class="text-xs text-gray-500 mb-1">{{data['art-no']}}</p>
-                <p class="text-xs truncate mb-3">{{data.desc}}</p>
-                <div class="flex justify-between items-center ">
-                    <p class="font-bold ">{{data.price}}</p>
-                    <button class="px-6 py-2 font-bold bg-[#f05252] hover:bg-black hover:text-white text-white rounded-full ">Add to cart  </button>
+    <div :class="border === 'right' ? 'border-r-1' : 'border-1'" class="relative p-5 w-full md:w-75 flex flex-col items-center justify-between border-gray-300 cursor-pointer">
+        <RouterLink class="w-full" :to="{name: 'product-view', params: { id: data.id}}">
+            <div class="w-full flex flex-col items-center">
+                <div class="absolute top-0 right-0 p-4">
+                    <img src="../assets/like-product.svg" alt="">   
+                </div>
+                <div class="p-7">
+                    <img class="w-[203px] h-[203px] " :src="data.image" alt="product image">
+                </div>
+                
+                <!-- product card title and data -->
+                <div class="w-full">
+                    <h5 class="text-base font-bold leading-[1.5]">{{data.title}}</h5>
+                    <p class="text-xs text-gray-500 mb-1">sdsdfs</p>
+                    <p class="text-xs truncate mb-3">{{data.description}}</p>
                 </div>
             </div>
-        </div>   
-    </RouterLink>
+        </RouterLink>
+
+        <div class="flex justify-between items-center w-full ">
+            <p class="font-bold ">${{data.price}}</p>
+            <button @click="cartStore.addToCart(data)" class="px-6 py-2 font-bold bg-[#f05252] text-white rounded-full cursor-pointer ">Add to cart  </button>
+        </div>
+    </div>   
 </template>

@@ -1,26 +1,18 @@
 <script setup>
-    import ProductCard1 from '@/components/ProductCard1.vue';
+    import ProductCard1 from '@/components/ProductCard.vue';
     import { useProductStore } from '@/store.js/products';
     import { storeToRefs } from 'pinia';
     import { onMounted } from 'vue';
-    import { useRoute } from 'vue-router';
-
-    const route = useRoute();
 
     const productStore = useProductStore();
-    const { categoryList, productList, filteredList, category } = storeToRefs(productStore);
-    // const category = ref('');
+    const { categoryList, filteredList, category } = storeToRefs(productStore);
 
     onMounted(() => {
-        // if(productList.value.length === 0){
-             productStore.fetchProductsData();
-        // }   
+        productStore.fetchProductsData();
     })
-
 
     const onSearchHandler = () => {
         productStore.getFilteredData();
-        // productStore.fetchCategoryWiseProducts({category: category.value})
     };
 </script>
 

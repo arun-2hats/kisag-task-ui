@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import AppHeader from './AppHeader.vue';
-import HotLinksHeader from './HotLinksHeader.vue';
-import NavigationHeader from './NavigationHeader.vue';
-
+    import AppHeader from './AppHeader.vue';
+    import HotLinksHeader from './HotLinksHeader.vue';
+    import NavigationHeader from './NavigationHeader.vue';
 </script>
 
 <template>

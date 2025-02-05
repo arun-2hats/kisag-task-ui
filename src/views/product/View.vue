@@ -10,7 +10,6 @@
 
     const router = useRoute();
     const cartStore = useCartStore();
-    
 
     watch(() => router?.params?.id,
     (id) => {
